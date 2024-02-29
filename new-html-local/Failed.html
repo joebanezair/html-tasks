@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Values.js"></script>
+</head>
+<body>
+    <div id="container-success">
+      <div id="image-con1">
+        <div id="happy-img1"></div>
+      </div>
+      <div id="output">
+      </div>
+      <div id="datetime"></div>
+    </div>
+
+    <script>
+        var values = {
+            "hml_page":{
+                "titlesuccess":"Password Change Success 🎊",
+                "titlefailed":"Password Change Failed",
+                "congrats":"Congratulations, your password has been successfully changed!!🎊",
+                "failed":"Failed to change your password, try again or please contact our chat support to continue!"
+            }
+        }
+        document.title = values.hml_page.failed;
+        document.getElementById("output").innerText = values.hml_page.failed;
+
+        var now = new Date();
+        var dateTimeString = now.toLocaleString();
+        document.getElementById('datetime').innerText = "Date: " + dateTimeString;
+    </script>
+    <style>
+        @font-face {
+            font-family: Kode;
+            src: url('./Kode_Mono/KodeMono-VariableFont_wght.ttf');
+        }
+        #happy-img1{
+            padding: 40px;
+            background-image: url('./sad1.gif');
+            background-size: 100%;
+            height: 100px;
+            width: 100px;
+            border-radius: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: pulse-water 2s infinite alternate ease-in-out;
+        }
+        #image-con1{
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+            width: fit-content;
+            border-radius: 200px;
+            margin: auto;
+        }
+        #container-success{
+            padding: 0px;
+            background-color: transparent;
+            border-radius: 5px;
+            width: fit-content;
+            margin: auto;
+            white-space: normal;
+            width: fit-content;
+            padding-top: 70px;
+        }
+        
+
+        .element {
+            animation: pulse 2s infinite;
+        }
+        #output{
+            color: #001311;
+            text-align: center;
+            font-family: Kode;
+            padding: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: normal;
+        }
+
+        #datetime{
+            color: #001311;
+            text-align: center;
+            font-family: Kode;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: transparent;
+            border-bottom: 1px solid #001311;
+            border-radius: 0px;
+            margin: auto;
+            width: fit-content;
+        }
+
+        @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.1);
+
+              background-color: #00ffe5; /* Light blue */
+              border-color: #02ffab; /* Light green */
+              box-shadow: 0 0 20px rgba(0, 255, 170, 0.7); /* Light green shadow */
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+         
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+       
+    </style>
+</body>
+</html>
